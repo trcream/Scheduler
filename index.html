@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+      <div id ='time'></div>
+    </header>
+    <div class="container">
+
+      <div class='row'>
+  
+          <div class ='col-md-1 time-block'> 9AM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn i:hover'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 10AM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 11AM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 12PM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+                   <div class ='col-md-1 time-block'> 1PM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 2PM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 3PM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 4PM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+
+          <div class ='col-md-1 time-block'> 5PM </div>
+          <div class ='col-md-10'><form><input type="text"></form></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+      
+        </div>
+
+      <!-- Timeblocks go here -->
+     
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+
+    <script type="text/javascript"> 
+
+  
+    var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+    console.log(currentDate)
+    var hour = moment().hours(); // Number
+    console.log(hour)
+
+    newDiv= $('#time')
+    newDiv.text(currentDate)
+    $('#time').append(newDiv)
+
+
+    
+ /*    Major Task 1
+    Build out HTML for Calendar
+      Create Styles
+    9 AM to 5 PM
+    Working with dates can be confusing
+
+      *** use moment.js
+
+      moment().format()
+
+ 
+    #Major Task 2 - Get te current hour of the day and compare with the 
+      hour blocks on the page 
+
+      Determine if each hour block is past present or future
+      Need a way to save data and load data from our local storage into 
+      our HTML
+
+      https://momentjs.com/docs/#/get-set/
+
+      figoure out how to format a date string 
+
+      # Major Task 3 - Printing the current date to the top of the calendar 
+      - Get the current date and format it 
+      
+      getting the current hour
+      moment().hour(); // Number retrieving 
+        moment().hours(Number); setting
+
+
+      Major Task 4   
+      Need a way to save our tasks for each hour in the browser
+        Saving tasks into local storage
+    
+    *** How to check the date
+        - get all blocks with a class
+        - you can loop over all of these elements with .each()
+        - like my last homework
+        
+        hourBlocks.each(function(index)){
+          // Is my current block element I am working with
+          var myCurrentBlock = $(this) 
+          // data-hours ='9'
+          myCurrentBlock.data('hour')
+
+          you add different attributes to each element
+
+          ex: 
+
+  
+        });
+     */
+  
+    
+      </script>
+    
+    
+    
+    
+    
+    
+  </body>
+</html>
