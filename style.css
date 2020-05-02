@@ -72,12 +72,14 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-input {
+.tasks {
   width: 100%;
   padding-top: 20px;
+  
   }
 
   .col-md-10 {
     width: 100%;
+
     }
 

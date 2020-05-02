@@ -34,40 +34,41 @@
       <div class='row'>
   
           <div class ='col-md-1 time-block'> 9AM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn i:hover'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-9'>  </textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='9'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 10AM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-10'>  </textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='10'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 11AM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-11'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='11'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 12PM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-12'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='12'>Save </button></div>
 
-                   <div class ='col-md-1 time-block'> 1PM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-1 time-block'> 1PM </div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-13'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='13'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 2PM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-14'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='14'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 3PM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-15'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='15'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 4PM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-16'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='16'>Save </button></div>
 
           <div class ='col-md-1 time-block'> 5PM </div>
-          <div class ='col-md-10'><form><input type="text"></form></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn'>Save </button></div>
+          <div class ='col-md-10'><textarea class='tasks' id='task-17'></textarea></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='17'>Save </button></div>
+
       
         </div>
 
@@ -94,6 +95,57 @@
     newDiv.text(currentDate)
     $('#time').append(newDiv)
 
+
+
+// variable to connect to all of the buttons
+
+
+   var saveButtons = $('.saveBtn')
+   tasks = {
+
+   };
+   
+// We need to pull out the stored data that is stored as a JSON string
+// We need to us JSON.stringify to pull out
+  var storedTasks = JSON.parse(localStorage.getItem('tasks'))  
+   console.log(storedTasks)
+
+   if(storedTasks){
+     tasks = storedTasks
+   }
+
+// Click event for all of the saved buttons
+      saveButtons.on('click',function(){
+
+     
+      //console.log(this);
+
+// Here we are getting the data attribute from the button we clicked with the 
+//this keyword to reference the particular button
+      var myClickedButton = $(this).data('hour');
+
+
+// Making the connection between the save button and the text area      
+   
+        var taskInput = $('#task-' + myClickedButton)
+// This is allowing us to get the value of the text box when clicking the save button
+      
+        console.log(taskInput.val());
+
+// Now we need to save into local storage
+
+        var taskValue = taskInput.val();
+
+        // setting a task button hour property to our object each time we click a button
+        tasks ['task' + myClickedButton] = taskValue
+        // Since this is an object we need to use JSON.stringify
+        JSON.stringify(tasks)
+        localStorage.setItem('tasks', JSON.stringify(tasks) )
+        //console.log(task)
+       
+        //localStorage.setItem('#task-' + myClickedButton, taskInput.val() )
+
+      });
 
     
  /*    Major Task 1
@@ -129,7 +181,9 @@
       Major Task 4   
       Need a way to save our tasks for each hour in the browser
         Saving tasks into local storage
-    
+      
+      // Save as a collection instead of indivual
+
     *** How to check the date
         - get all blocks with a class
         - you can loop over all of these elements with .each()
@@ -148,6 +202,8 @@
   
         });
      */
+
+  
   
     
       </script>
