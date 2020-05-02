@@ -23,25 +23,28 @@ textarea{
   border-bottom: 10px solid black;
 }
 
+
 .description{
   white-space: pre-wrap;
 }
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
+ 
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
+
+  
+ 
 }
 
 .past {
@@ -60,12 +63,14 @@ textarea{
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  
 }
+
 
 .saveBtn i:hover {
   font-size: 20px;
@@ -75,6 +80,7 @@ textarea{
 .tasks {
   width: 100%;
   padding-top: 20px;
+  border: black;
 
 
   
@@ -85,3 +91,9 @@ textarea{
 
     }
 
+.fa-save{
+  float: left;
+  width: 62px;
+  height: 62px;
+  margin-left: -10px;
+}

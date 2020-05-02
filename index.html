@@ -34,46 +34,46 @@
       <div class='row'>
 
         
-          <div class ='col-md-1 time-block' data-time = '9' id='hour-9'> 9 AM </div>
+          <div class ='col-md-1 time-block hour' data-time = '9' id='hour-9'> 9 AM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-9'>  </textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='9'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='9' ></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '10' id='hour-10'> 10 AM </div>
+          <div class ='col-md-1 time-block hour' data-time = '10' id='hour-10'> 10 AM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-10'>  </textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='10'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='10'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '11' id='hour-11'> 11 AM </div>
+          <div class ='col-md-1 time-block hour' data-time = '11' id='hour-11'> 11 AM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-11'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='11'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='11'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '12' id='hour-12'> 12 PM </div>
+          <div class ='col-md-1 time-block hour' data-time = '12' id='hour-12'> 12 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-12'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='12'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='12'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '13' id='hour-13'> 1 PM </div>
+          <div class ='col-md-1 time-block hour' data-time = '13' id='hour-13'> 1 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-13'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='13'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='13'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '14' id='hour-14'> 2 PM </div>
+          <div class ='col-md-1 time-block hour' data-time = '14' id='hour-14'> 2 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-14'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='14'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='14'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '15' id='hour-15'> 3 PM </div>
+          <div class ='col-md-1 time-block hour' data-time = '15' id='hour-15'> 3 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-15'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='15'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='15'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '16' id='hour-16'> 4 PM </div>
+          <div class ='col-md-1 time-block hour' data-time = '16' id='hour-16'> 4 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-16'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='16'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='16'></button></div>
 
-          <div class ='col-md-1 time-block' data-time = '17' id='hour-17'> 5 PM </div>
+          <div class ='col-md-1 time-block hour' data-time = '17' id='hour-17'> 5 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-17'></textarea></div>
-          <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='17'>Save </button></div>
+          <div class ='col-md-1 ' > <button class = 'saveBtn far fa-save' data-hour ='17'></button></div>
 
       
         </div>
 
-      <!-- Timeblocks go here -->
+   <!-- Timeblocks go here -->
      
 
 
@@ -121,7 +121,7 @@ timeContent.each(function(){
 
 
    // $(this).addClass('past')
-    taskColor.css("background-color","red");
+    taskColor.css("background-color","lightcoral");
   
 
   }
@@ -130,7 +130,7 @@ timeContent.each(function(){
 
    // $(this).removeClass('past')
    // $(this).addClass('present')
-    taskColor.css("background-color","green");
+    taskColor.css("background-color","lightseagreen");
 
   }
 
@@ -139,7 +139,7 @@ timeContent.each(function(){
    // $(this).removeClass('past')
    // $(this).removeClass('present')
    // $(this).addClass('future')
-    taskColor.css("background-color","white")
+    taskColor.css("background-color","lightslategray")
 
   }
 
@@ -191,6 +191,7 @@ saveButtons.each(function(){
 
 // Click event for all of the saved buttons
       saveButtons.on('click',function(){
+        alert('Saved')
         
 
           //console.log(this);
@@ -224,63 +225,7 @@ saveButtons.each(function(){
 
       });
 
-    
- /*    Major Task 1
-    Build out HTML for Calendar
-      Create Styles
-    9 AM to 5 PM
-    Working with dates can be confusing
-
-      *** use moment.js
-
-      moment().format()
-
  
-    #Major Task 2 - Get te current hour of the day and compare with the 
-      hour blocks on the page 
-
-      Determine if each hour block is past present or future
-      Need a way to save data and load data from our local storage into 
-      our HTML
-
-      https://momentjs.com/docs/#/get-set/
-
-      figoure out how to format a date string 
-
-      # Major Task 3 - Printing the current date to the top of the calendar 
-      - Get the current date and format it 
-      
-      getting the current hour
-      moment().hour(); // Number retrieving 
-        moment().hours(Number); setting
-
-
-      Major Task 4   
-      Need a way to save our tasks for each hour in the browser
-        Saving tasks into local storage
-      
-      // Save as a collection instead of indivual
-
-    *** How to check the date
-        - get all blocks with a class
-        - you can loop over all of these elements with .each()
-        - like my last homework
-        
-        hourBlocks.each(function(index)){
-          // Is my current block element I am working with
-          var myCurrentBlock = $(this) 
-          // data-hours ='9'
-          myCurrentBlock.data('hour')
-
-          you add different attributes to each element
-
-          ex: 
-
-  
-        });
-     */
-
-  
   
     
       </script>
