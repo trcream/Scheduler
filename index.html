@@ -32,40 +32,41 @@
     <div class="container">
 
       <div class='row'>
-  
-          <div class ='col-md-1 time-block'> 9AM </div>
+
+        
+          <div class ='col-md-1 time-block' data-time = '9' id='hour-9'> 9 AM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-9'>  </textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='9'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 10AM </div>
+          <div class ='col-md-1 time-block' data-time = '10' id='hour-10'> 10 AM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-10'>  </textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='10'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 11AM </div>
+          <div class ='col-md-1 time-block' data-time = '11' id='hour-11'> 11 AM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-11'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='11'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 12PM </div>
+          <div class ='col-md-1 time-block' data-time = '12' id='hour-12'> 12 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-12'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='12'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 1PM </div>
+          <div class ='col-md-1 time-block' data-time = '13' id='hour-13'> 1 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-13'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='13'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 2PM </div>
+          <div class ='col-md-1 time-block' data-time = '14' id='hour-14'> 2 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-14'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='14'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 3PM </div>
+          <div class ='col-md-1 time-block' data-time = '15' id='hour-15'> 3 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-15'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='15'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 4PM </div>
+          <div class ='col-md-1 time-block' data-time = '16' id='hour-16'> 4 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-16'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='16'>Save </button></div>
 
-          <div class ='col-md-1 time-block'> 5PM </div>
+          <div class ='col-md-1 time-block' data-time = '17' id='hour-17'> 5 PM </div>
           <div class ='col-md-10'><textarea class='tasks' id='task-17'></textarea></div>
           <div class ='col-md-1 ' > <button class = 'saveBtn' data-hour ='17'>Save </button></div>
 
@@ -85,15 +86,68 @@
 
     <script type="text/javascript"> 
 
-  
+
+// Getting the current time 
     var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
     console.log(currentDate)
-    var hour = moment().hours(); // Number
-    console.log(hour)
+ 
+    console.log(typeof currentHour)
 
+// Appending the time 
     newDiv= $('#time')
     newDiv.text(currentDate)
     $('#time').append(newDiv)
+
+
+
+// Changing color based on time 
+
+var timeContent = $('.time-block')
+
+timeContent.each(function(){
+
+  var currentHour = moment().hours(); // Number
+
+  var time = $(this).data('time');
+  console.log(time);
+
+  var taskColor = $('#task-' + time)
+  //console.log(taskColor)
+  
+  var blockHour = parseInt($(this).attr('id').split('-')[1])
+  console.log(blockHour)
+
+  if (blockHour < currentHour ){
+
+
+   // $(this).addClass('past')
+    taskColor.css("background-color","red");
+  
+
+  }
+  
+  else if ( blockHour > currentHour){
+
+   // $(this).removeClass('past')
+   // $(this).addClass('present')
+    taskColor.css("background-color","green");
+
+  }
+
+  else {
+
+   // $(this).removeClass('past')
+   // $(this).removeClass('present')
+   // $(this).addClass('future')
+    taskColor.css("background-color","white")
+
+  }
+
+
+})
+
+
+
 
 
 
@@ -125,7 +179,8 @@ saveButtons.each(function(){
 
 //Getting our input
   var myClickedButton = $(this).data('hour');
-  var taskInput = $('#task-' + myClickedButton)
+
+   var taskInput = $('#task-' + myClickedButton)
 
   // We are getting the value out of the object and storing it in the value
   taskInput.val(tasks ['task' + myClickedButton])
@@ -136,6 +191,7 @@ saveButtons.each(function(){
 
 // Click event for all of the saved buttons
       saveButtons.on('click',function(){
+        
 
           //console.log(this);
 
