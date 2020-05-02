@@ -107,18 +107,37 @@
    
 // We need to pull out the stored data that is stored as a JSON string
 // We need to us JSON.stringify to pull out
-  var storedTasks = JSON.parse(localStorage.getItem('tasks'))  
+  var storedTasks = JSON.parse(localStorage.getItem('tasks'))
    console.log(storedTasks)
 
    if(storedTasks){
      tasks = storedTasks
    }
+// if I can't get any stored tasks, then give me the default empty object
+   else{
+    {}
+
+   }
+console.log(tasks)
+
+
+saveButtons.each(function(){
+
+//Getting our input
+  var myClickedButton = $(this).data('hour');
+  var taskInput = $('#task-' + myClickedButton)
+
+  // We are getting the value out of the object and storing it in the value
+  taskInput.val(tasks ['task' + myClickedButton])
+})
+
+
+
 
 // Click event for all of the saved buttons
       saveButtons.on('click',function(){
 
-     
-      //console.log(this);
+          //console.log(this);
 
 // Here we are getting the data attribute from the button we clicked with the 
 //this keyword to reference the particular button
@@ -132,13 +151,15 @@
       
         console.log(taskInput.val());
 
-// Now we need to save into local storage
+// Now we need to save into local storage. This is where we get the input
 
         var taskValue = taskInput.val();
 
         // setting a task button hour property to our object each time we click a button
+        // We are saving into out object
         tasks ['task' + myClickedButton] = taskValue
         // Since this is an object we need to use JSON.stringify
+        // We are getting the value out and storing it in an object
         JSON.stringify(tasks)
         localStorage.setItem('tasks', JSON.stringify(tasks) )
         //console.log(task)
